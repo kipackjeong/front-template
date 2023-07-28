@@ -1,10 +1,16 @@
 /** @type {import('next').NextConfig} */
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
     domains: ["lh3.googleusercontent.com", "vercel.com"],
   },
+
+  plugins: [
+    new MiniCssExtractPlugin(),
+    // ...
+  ],
 
   //#region DB setup config
   serverRuntimeConfig: {
