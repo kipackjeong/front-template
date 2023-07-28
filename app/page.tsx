@@ -39,13 +39,13 @@ export default async function Home() {
           </p>
         </a>
         <h1
-          className="text-4xl md:text-7xl animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:leading-[5rem]"
+          className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer>Building blocks for your Next project</Balancer>
         </h1>
         <p
-          className="md:text-xl mt-6 animate-fade-up text-center text-gray-500 opacity-0"
+          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
           <Balancer>
@@ -58,7 +58,7 @@ export default async function Home() {
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
         >
           <a
-            className="text-sm group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-white transition-colors hover:bg-white hover:text-black"
+            className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
             href={DEPLOY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -80,7 +80,7 @@ export default async function Home() {
             <p>Deploy to Vercel</p>
           </a>
           <a
-            className="text-sm flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
             href="https://github.com/steven-tey/precedent"
             target="_blank"
             rel="noopener noreferrer"
