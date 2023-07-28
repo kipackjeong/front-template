@@ -3,7 +3,7 @@
 import { ReactNode, useState } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import useWindowSize from "@/lib/hooks/use-window-size";
-import Leaflet from "./leaflet";
+import Leaflet from "./LeafLet";
 
 export default function Tooltip({
   children,
@@ -23,7 +23,7 @@ export default function Tooltip({
       {isMobile && (
         <button
           type="button"
-          className={`${fullWidth ? "w-full" : "inline-flex"}`}
+          className={`Tooltip ${fullWidth ? "w-full" : "inline-flex"}`}
           onClick={() => setOpenTooltip(true)}
         >
           {children}

@@ -5,6 +5,20 @@ const nextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com", "vercel.com"],
   },
+
+  //#region DB setup config
+  serverRuntimeConfig: {
+    connectionString: process.env.MONGO_DB || "",
+    secret: process.env.SECRET || "localsecret",
+  },
+  publicRuntimeConfig: {
+    apiUrl:
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000/api" // development api
+        : "http://localhost:3000/api", // production api
+  },
+  //#endregion
+
   async redirects() {
     return [
       {
@@ -15,5 +29,4 @@ const nextConfig = {
     ];
   },
 };
-
 module.exports = nextConfig;
