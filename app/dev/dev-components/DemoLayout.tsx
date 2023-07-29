@@ -1,6 +1,6 @@
 import Txt from "@/lib/client/components/shared/Txt";
 import { StackProps } from "@mui/material";
-import VStack from "client/core/ui/layouts/flexes/VStack";
+import VStack from "client/core/ui/layouts/flexes/Stack";
 import { title } from "process";
 import React from "react";
 

@@ -1,5 +1,5 @@
 import DemoLayout from "./dev-components/DemoLayout";
-import VStack from "client/core/ui/layouts/flexes/VStack";
+import VStack from "client/core/ui/layouts/flexes/Stack";
 import HStack from "client/core/ui/layouts/flexes/HStack";
 
 export default function DevPage() {

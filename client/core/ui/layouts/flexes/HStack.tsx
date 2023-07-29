@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Stack, StackProps } from "@mui/material";
+import { AppStackProps, Stack, StackProps, styled } from "@mui/material";
 
-export type HStackProps = {} & StackProps;
+export type HStackProps = {} & AppStackProps;
 
 function HStack({ children, ...rest }: HStackProps) {
   return (

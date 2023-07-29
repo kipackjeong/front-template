@@ -1,26 +1,15 @@
+import { AppStackProps, Stack } from "@mui/material";
 import React from "react";
-import { Container, Stack, StackProps } from "@mui/material";
 
-export type VStackProps = {
-  fw?: boolean;
-  fh?: boolean;
-  mw?: number | string;
-  mh?: number | string;
-} & StackProps;
+type VStackProps = {} & Omit<AppStackProps, "flexDirection">;
 
-function VStack({ children, fw, fh, mw, mh, ...rest }: VStackProps) {
-  const restObj = new Object(rest);
-
+function VStack({ children, ...rest }: VStackProps) {
   return (
     <Stack
       className="VStack"
-      direction={"column"}
+      flexDirection="column"
       justifyContent={"center"}
       alignItems={"center"}
-      width={mw || fw ? "100%" : "fit-content"}
-      height={mh || fh ? "100%" : "fit-content"}
-      maxWidth={mw}
-      maxHeight={mh}
       {...rest}
     >
       {children}

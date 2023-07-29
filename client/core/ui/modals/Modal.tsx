@@ -2,8 +2,8 @@ import {
   default as MuiModal,
   ModalProps as MuiModalProps,
 } from "@mui/material/Modal";
-import VStack from "../layouts/flexes/VStack";
-import { use, useEffect, useState } from "react";
+import VStack from "../layouts/flexes/Stack";
+import { useEffect, useState } from "react";
 import HStack from "../layouts/flexes/HStack";
 import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
@@ -28,8 +28,8 @@ function Modal({ children, open, ...rest }: ModalProps) {
       }}
       {...rest}
     >
-      <VStack fw fh>
-        <HStack width="100%">
+      <VStack fullWidth fullHeight>
+        <HStack>
           <HStack flexGrow={1} />
           <IconButton
             onClick={() => {
