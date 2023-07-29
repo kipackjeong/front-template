@@ -7,10 +7,7 @@ const nextConfig = {
     domains: ["lh3.googleusercontent.com", "vercel.com"],
   },
 
-  plugins: [
-    new MiniCssExtractPlugin(),
-    // ...
-  ],
+  plugins: [new MiniCssExtractPlugin()],
 
   //#region DB setup config
   serverRuntimeConfig: {

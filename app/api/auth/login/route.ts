@@ -1,4 +1,4 @@
-import { getBody } from "core/utils/api-utils";
+import { getBody } from "client/core/utils/api-utils";
 import { NextRequest, NextResponse } from "next/server";
 
 /**

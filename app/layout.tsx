@@ -1,24 +1,26 @@
-import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
 import { sfPro, inter } from "./fonts";
-import Nav from "@/components/layout/Nav";
-import Footer from "@/components/layout/Footer";
 import { Suspense } from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Container, ThemeProvider, styled } from "@mui/material";
+import ThemeRegistry from "../client/core/ui/wrappers/ThemeRegistry";
+import Background from "client/core/ui/atoms/Background";
+import Navbar from "client/lib/components/defaults/navbar/Navbar";
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
-  description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-  twitter: {
-    card: "summary_large_image",
-    title: "Precedent - Building blocks for your Next.js project",
-    description:
-      "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-    creator: "@steventey",
-  },
-  metadataBase: new URL("https://precedent.dev"),
-  themeColor: "#FFF",
+  // title: "Precedent - Building blocks for your Next.js project",
+  // description:
+  //   "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Precedent - Building blocks for your Next.js project",
+  //   description:
+  //     "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+  //   creator: "@steventey",
+  // },
+  // metadataBase: new URL("https://precedent.dev"),
+  // themeColor: "#FFF",
 };
 
 export default async function RootLayout({
@@ -31,18 +33,17 @@ export default async function RootLayout({
       <body
         className={cx(sfPro.variable, inter.variable) + " h-screen w-screen"}
       >
-        <div
-          className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100"
-          style={{ zIndex: -1 }}
-        />
-        <Suspense fallback="...">
-          {/* @ts-expect-error Server Component */}
-          <Nav />
-        </Suspense>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
-          {children}
-        </main>
-        <Footer />
+        <ThemeRegistry options={{ key: "mui" }}>
+          <Background />
+          <nav>
+            <Navbar />
+          </nav>
+          <main>
+            <CssBaseline enableColorScheme>
+              <Container maxWidth={"xl"}>{children}</Container>
+            </CssBaseline>
+          </main>
+        </ThemeRegistry>
         <Analytics />
       </body>
     </html>

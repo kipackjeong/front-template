@@ -1,21 +1,19 @@
-import Txt from "@/components/shared/Txt";
-import {
-  DivProps,
-  FlexProps,
-  VFlex,
-} from "@/components/shared/layouts/flexes/Flex";
+import Txt from "@/lib/client/components/shared/Txt";
+import { StackProps } from "@mui/material";
+import VStack from "client/core/ui/layouts/flexes/VStack";
+import { title } from "process";
 import React from "react";
 
 type DemoLayoutProps = {
   title: string;
-} & FlexProps;
+} & StackProps;
 
 function DemoLayout({ title, children, ...restProps }: DemoLayoutProps) {
   return (
-    <VFlex className="gap-2">
+    <VStack className="gap-2">
       <Txt value={title} type="text-2xl" />
-      <VFlex {...restProps}>{children}</VFlex>
-    </VFlex>
+      <VStack {...restProps}>{children}</VStack>
+    </VStack>
   );
 }
 
