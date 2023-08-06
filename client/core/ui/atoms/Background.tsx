@@ -11,9 +11,10 @@ function Background({}: BackgroundProps) {
     <div
       style={{
         position: "fixed",
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
         backgroundColor: theme.palette.background.default,
+        zIndex: -1,
       }}
     ></div>
   );

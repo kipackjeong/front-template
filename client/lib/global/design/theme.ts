@@ -133,16 +133,18 @@ const components: Components = {
   MuiSvgIcon: {
     styleOverrides: {
       //@ts-ignore
-      root: ({ theme }: { theme: Theme }) => ({
-        color: theme.palette.text.primary,
-      }),
+      root: ({ theme }: { theme: Theme }) => {
+        return {
+          color: theme.palette.text.primary,
+        };
+      },
     },
   },
   MuiLoadingButton: {
     styleOverrides: {
       //@ts-ignore
       root: ({ theme }: { theme: Theme }) => ({
-        color: theme.palette.text.primary,
+        color: "white",
       }),
     },
 
@@ -164,9 +166,25 @@ const components: Components = {
 
 export const getDesignTokens = (mode: ColorMode): Partial<Theme> => {
   const palette = mode === "light" ? lightPalette : darkPalette;
-
-  //@ts-ignore
-  return { palette, components };
+  const shadows =
+    mode === "light"
+      ? []
+      : [
+          "none",
+          "0.8 1.3px 1.3px 0.8px rgba(255, 255, 255, 0.1)",
+          "0 2px 4px 2px rgba(255, 255, 255, 0.1)",
+          "0 4px 8px 4px rgba(255, 255, 255, 0.1)",
+          "0 8px 16px 8px rgba(255, 255, 255, 0.1)",
+          "0 16px 32px 16px rgba(255, 255, 255, 0.1)",
+          // Add more shadow styles with increasing thickness as needed
+        ];
+  return {
+    //@ts-ignore
+    palette,
+    components,
+    //@ts-ignore
+    shadows,
+  };
 };
 
 export type ColorMode = "light" | "dark";

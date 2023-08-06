@@ -1,4 +1,5 @@
 import { getBody } from "client/core/utils/api-utils";
+import { request } from "http";
 import { NextRequest, NextResponse } from "next/server";
 
 /**
@@ -8,13 +9,12 @@ import { NextRequest, NextResponse } from "next/server";
  *     description: login endpoint
  *     responses:
  *       200:
- *          description: Hello World!
+ *          message: "success"
  */
 export async function POST(
-  request: NextRequest & { body: LoginBody },
-  response: NextResponse,
+  request: Request & { body: LoginBody },
 ): Promise<any> {
-  return;
+  return NextResponse.json({ message: "success" });
 }
 
 type LoginBody = {

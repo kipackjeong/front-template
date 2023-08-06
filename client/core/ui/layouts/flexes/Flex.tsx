@@ -1,29 +1,23 @@
 import React from "react";
-import {
-  AppStackProps,
-  Container,
-  StackProps,
-  Stack as MuiStack,
-} from "@mui/material";
+import { StackProps, Stack } from "@mui/material";
+import classNames from "classnames";
 
-declare module "@mui/material/Stack" {
-  interface AppStackProps extends StackProps {
-    fullWidth?: boolean;
-    fullHeight?: boolean;
-  }
-}
-
-function Stack({
+export type FlexProps = {
+  fullWidth?: boolean;
+  fullHeight?: boolean;
+} & StackProps;
+function Flex({
+  className,
   children,
   fullWidth,
   fullHeight,
   maxWidth,
   maxHeight,
   ...rest
-}: AppStackProps) {
+}: FlexProps) {
   return (
-    <MuiStack
-      className="Stack"
+    <Stack
+      className={classNames(className, "Flex")}
       justifyContent={"center"}
       alignItems={"center"}
       width={maxWidth || fullWidth ? "100%" : "fit-content"}
@@ -33,8 +27,8 @@ function Stack({
       {...rest}
     >
       {children}
-    </MuiStack>
+    </Stack>
   );
 }
 
-export default Stack;
+export default Flex;

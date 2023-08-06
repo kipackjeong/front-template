@@ -7,7 +7,9 @@ import { Container, ThemeProvider, styled } from "@mui/material";
 import ThemeRegistry from "../client/core/ui/wrappers/ThemeRegistry";
 import Background from "client/core/ui/atoms/Background";
 import Navbar from "client/lib/components/defaults/navbar/Navbar";
-
+import { popupProvider } from "client/lib/providers/popup-provider";
+import ProviderWrapper from "client/core/ui/wrappers/ProviderWrapper";
+import "app/global.css";
 export const metadata = {
   // title: "Precedent - Building blocks for your Next.js project",
   // description:
@@ -31,19 +33,21 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cx(sfPro.variable, inter.variable) + " h-screen w-screen"}
+        style={{
+          width: "100vw",
+          height: "100vh",
+        }}
+        className={cx(sfPro.variable, inter.variable)}
       >
-        <ThemeRegistry options={{ key: "mui" }}>
+        <ProviderWrapper>
           <Background />
           <nav>
             <Navbar />
           </nav>
-          <main>
-            <CssBaseline enableColorScheme>
-              <Container maxWidth={"xl"}>{children}</Container>
-            </CssBaseline>
+          <main style={{ width: "100%" }}>
+            <CssBaseline enableColorScheme>{children}</CssBaseline>
           </main>
-        </ThemeRegistry>
+        </ProviderWrapper>
         <Analytics />
       </body>
     </html>

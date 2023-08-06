@@ -1,14 +1,12 @@
-"use client";
 import { Button } from "@mui/material";
-import VStack from "client/core/ui/layouts/flexes/Stack";
+import VFlex from "client/core/ui/layouts/flexes/Flex";
 import { appProvider } from "client/lib/providers/app-provider";
+import Home from "client/lib/scenes/Home";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <VStack>
-      <Button variant="contained" color="primary" sx={{ color: "white" }}>
-        Hello
-      </Button>
-    </VStack>
+    <VFlex className="HomePage" fullWidth fullHeight>
+      <Home />
+    </VFlex>
   );
 }

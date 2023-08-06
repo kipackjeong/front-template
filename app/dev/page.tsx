@@ -1,13 +1,13 @@
 import DemoLayout from "./dev-components/DemoLayout";
-import VStack from "client/core/ui/layouts/flexes/Stack";
-import HStack from "client/core/ui/layouts/flexes/HStack";
+import VFlex from "client/core/ui/layouts/flexes/Flex";
+import HFlex from "client/core/ui/layouts/flexes/HFlex";
 
 export default function DevPage() {
   return (
-    <VStack className="gap-4">
+    <VFlex className="gap-4">
       <DemoLayout title="Flex" className="items-start bg-blue-400"></DemoLayout>
       <DemoLayout title="Text"></DemoLayout>
-    </VStack>
+    </VFlex>
   );
 }
 // dispatch:  425 502 5035
